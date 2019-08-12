@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>共享发布</title>
+    <script src="config/index.js"></script>
+    <script type="text/javascript">
+        Vue.component(hjVerticalMenuItem.name,hjVerticalMenuItem.template);
+        Vue.component(processEntry.name,processEntry.template);
+        Vue.component(hjProcess.name,hjProcess.template);
+    </script>
+
+</head>
+
+<body>
+<div id="app">
+    <el-container style="height: 100%;">
+        <el-header height="70px" class="m0 p0">
+            <el-container>
+                <el-header height="70px" class="title-header">共享发布库管理工具
+                    <div :class="activeHead == 1 ? 'ml30 h_menu active' : 'ml30 h_menu'" @click="changeActiveHead(1)">共享发布管理</div>
+                    <div :class="activeHead == 2 ? 'ml20 h_menu active' : 'ml20 h_menu'" @click="changeActiveHead(2)">审批管理</div>
+                    <div :class="activeHead == 3 ? 'ml20 h_menu active' : 'ml20 h_menu'" @click="changeActiveHead(3)">信息查询</div>
+<!--                    <div :class="activeHead == 4 ? 'ml20 h_menu active' : 'ml20 h_menu'" @click="activeHead = 4">DEMO</div>-->
+                    <div style="display: inline-block;position:absolute;top: 10px;right: 10px;">
+                        当前用户：<el-select v-model="userToken" placeholder="请选择用户" @change="changUser">
+                            <el-option  key="1" label="赵云" value="test20156826"></el-option>
+                            <el-option  key="12" label="马超" value="test20191526"></el-option>
+                            <el-option  key="2" label="关羽" value="test20161106"></el-option>
+                            <el-option  key="3" label="关平" value="test20161236"></el-option>
+                            <el-option  key="4" label="貂蝉" value="test20170216"></el-option>
+                            <el-option  key="5" label="魏延" value="test20170266"></el-option>
+                            <el-option  key="6" label="姜维" value="test20171206"></el-option>
+                            <el-option  key="7" label="邢玉" value="test20180206"></el-option>
+                            <el-option  key="8" label="李强" value="test20180216"></el-option>
+                            <el-option  key="9" label="徐彤" value="test20190102"></el-option>
+                            <el-option  key="10" label="谢宇" value="test20190206"></el-option>
+                            <el-option  key="11" label="许天" value="test20190306"></el-option>
+                            <el-option  key="13" label="马三" value="test20140216"></el-option>
+                            <el-option  key="14" label="肖杰" value="test010113"></el-option>
+                        </el-select>
+                    </div>
+                </el-header>
+<!--                <el-footer height="30px" class="title-desc">您所在的位置: {{pathName}}</el-footer>-->
+            </el-container>
+        </el-header>
+        <el-container>
+            <el-aside width="240px">
+                <el-menu class="menuCls"
+                         @select="selectMenu"
+                         :default-active="defaultActive"
+                         :default-openeds="defaultOpeneds"
+                         :show-timeout="1000"
+                         :hide-timeout="1000"
+                         :collapse="collapsed"
+                         :router="false">
+<!--                    <el-menu-item id="0" @click="collapsed = !collapsed">-->
+<!--                        <i v-if="collapsed" class="el-icon-arrow-left"></i>-->
+<!--                        <i v-else="" class="el-icon-arrow-right"></i>-->
+<!--                        <span></span>-->
+<!--                    </el-menu-item>-->
+                    <hj-vertical-menu-item :data="menus" @item-click="onCHMenuClick"></hj-vertical-menu-item>
+                </el-menu>
+            </el-aside>
+            <el-container>
+                <el-main style="padding: 0!important;" class="app_head-tabs">
+                    <el-tabs v-model="activeName"
+                             @tab-click="handleTabClick"
+                             @tab-remove="handleRemoveTabs">
+                        <el-tab-pane v-for="tabItem in tabsItem"
+                                     :label="tabItem.label"
+                                     :name="tabItem.name"
+                                     :closable="tabItem.closable && tabsItem.length > 1">
+                            <div :style="'overflow-y: auto;height:'+ screenHeight +'px;'">
+                                <router-view :name="tabItem.name"/>
+                            </div>
+                        </el-tab-pane>
+<!--                        <el-tab-pane label="DEMO" name="DEMO"></el-tab-pane>-->
+                    </el-tabs>
+                    <div style="position:absolute;top: 70px;right: 0;height: 35px;">
+<!--                        <el-dropdown split-button type="primary">-->
+                        <el-dropdown trigger="click" @command="dropdownCommand">
+                            <el-button type="primary" class="tabs_menu"><i class="el-icon-s-unfold el-icon&#45;&#45;right"></i></el-button>
+<!--                        <span class="el-dropdown-link"><i-->
+<!--                                class="el-icon-s-unfold el-icon&#45;&#45;right"></i></span>-->
+                            <el-dropdown-menu slot="dropdown" >
+<!--                                <el-dropdown-item icon="el-icon-refresh" command="refresh">刷新</el-dropdown-item>-->
+                                <el-dropdown-item icon="el-icon-close" command="close">关闭当前</el-dropdown-item>
+                                <el-dropdown-item icon="el-icon-document-delete" command="deleteOther">关闭其他</el-dropdown-item>
+                                <el-dropdown-item icon="el-icon-delete" command="deleteAll">关闭所有</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
+                    </div>
+                </el-main>
+                <el-footer height="40px" style="background-color: rgb(238, 241, 246);padding: 8px;text-align: center;font-size: 15px;">
+                    <p>&copy;华建云鼎 Company 2019.</p>
+                </el-footer>
+            </el-container>
+        </el-container>
+    </el-container>
+</div>
+</body>
+<script type="text/javascript">
+    if(isIE){
+        document.write('<script src="resources/js/browser.min.js"><\/script>');
+        document.write('<script src="app.js?t=' + times + '" type="text/babel"><\/script>');
+    }else{
+        document.write('<script src="app.js?t=' + times + '"><\/script>');
+    }
+</script>
+</html>

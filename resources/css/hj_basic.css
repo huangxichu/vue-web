@@ -1,0 +1,579 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    background: #fafafa;
+    font-family: "Lantinghei SC", "Helvetica Neue", "Microsoft YaHei", "WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif
+}
+
+h1, h2, h3, h4, h5, p, ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+/* 滚动条设计 */
+
+/* 整体部分 */
+*::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+
+/* 滚动条两端的按钮，可以用 display:none;不让它显示 */
+*::-webkit-scrollbar-button{
+    /*background: #c9c1d3;*/
+    display:none;
+}
+
+/* 滑动外层轨道，可以用 display:none;不让它显示  */
+*::-webkit-scrollbar-track{
+    border-radius: 0;
+    background: none;
+}
+
+/* 滑动内层轨道  */
+*::-webkit-scrollbar-track-piece{
+    /*background: #3e2bff;*/
+    display:none;
+}
+
+/* 滑块 */
+*::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+}
+
+/* 滑块效果 */
+*::-webkit-scrollbar-thumb:hover{
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+    background-color: rgba(85,85,85,0.4);
+}
+/* 边角 */
+*::-webkit-scrollbar-corner{
+    /*background: #ff4456;*/
+}
+
+
+*{
+    scrollbar-arrow-color: #f4ae21;/* 三角箭头的颜色 */
+    scrollbar-face-color: #333;/* 立体滚动条的颜色 */
+    scrollbar-3dlight-color: #666;/* 立体滚动条亮边的颜色 */
+    scrollbar-highlight-color: #666;/* 滚动条空白部分的颜色 */
+    scrollbar-shadow-color: #999;/* 立体滚动条阴影的颜色 */
+    scrollbar-darkshadow-color: #666;/* 立体滚动条强阴影的颜色 */
+    scrollbar-track-color: #666;/* 立体滚动条背景的颜色 */
+    scrollbar-base-color: #f8f8f8;/* 滚动条的基本颜色 */
+}
+
+.kaicz_404 {
+    padding-top: 80px;
+    padding-bottom: 112px;
+}
+
+.container {
+    width: 1170px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.kaicz_404 img {
+    display: block;
+    margin: auto;
+}
+
+.kaicz_404 div.h2 {
+    font-size: 32px;
+    color: #333333;
+    text-align: center;
+    letter-spacing: 5px;
+    padding-top: 33px;
+    padding-bottom: 25px;
+    /*font-weight: 600;*/
+}
+
+.kaicz_404 p {
+    font-size: 14px;
+    color: #666666;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btn_blue {
+    display: inline-block;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    border-radius: 3px;
+    background: #0052d0;
+    color: #fff;
+    letter-spacing: 5px;
+    border: 0;
+    font-size: 18px;
+    padding: 0;
+    text-decoration: none;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-property: background;
+    transition-property: background;
+}
+
+.kaicz_404 a {
+    display: block;
+    margin: auto;
+    width: 220px;
+    height: 56px;
+}
+
+#app {
+
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.title-header {
+    padding: 15px 40px;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #199ed8;
+}
+
+.title-desc {
+    padding: 4px 50px;
+    font-size: 17px;
+    color: #199ed8;
+    font-weight: 600;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.menuCls {
+    background-color: rgb(238, 241, 246);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    bottom: 0;
+    overflow-y: auto;
+    width: 240px;
+}
+
+.m0 {
+    margin: 0;
+}
+
+.m10 {
+    margin: 10px;
+}
+
+.m20 {
+    margin: 20px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.mr30 {
+    margin-right: 30px;
+}
+
+.ml30 {
+    margin-left: 30px;
+}
+
+.p0 {
+    padding: 0;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+.w50 {
+    width: 50px;
+}
+
+.w100 {
+    width: 100px;
+}
+
+.w150 {
+    width: 150px;
+}
+
+.w200 {
+    width: 200px;
+}
+
+.h50 {
+    height: 50px;
+}
+
+.h100 {
+    height: 100px;
+}
+
+.h150 {
+    height: 150px;
+}
+
+.h200 {
+    height: 200px;
+}
+
+.f12 {
+    font-size: 12px;
+}
+
+.f13 {
+    font-size: 13px;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.f15 {
+    font-size: 15px;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.f17 {
+    font-size: 17px;
+}
+
+.f18 {
+    font-size: 18px;
+}
+
+.f20 {
+    font-size: 20px;
+}
+
+.f23 {
+    font-size: 23px;
+}
+
+.f25 {
+    font-size: 25px;
+}
+
+.fw600 {
+    font-weight: 600;
+}
+
+.clb {
+    clear: both;
+}
+
+.el-main {
+    padding: 10px !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.h_menu {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 23px;
+    display: inline-block;
+    border: 1px solid;
+    padding: 5px 10px;
+    height: 31px;
+}
+
+.h_menu:hover {
+    color: #ffbb77;
+    /*font-size: 25px;*/
+    /*padding: 3px;*/
+}
+
+.h_menu.active {
+    color: #ffbb77 !important;
+    /*font-size: 25px!important;*/
+}
+
+.el-submenu .fa {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* element ui 自定样式 */
+.el-dialog__header {
+    padding: 10px 20px !important;
+    border-bottom: 1px solid #ddd;
+    background: #199ed8;
+    border-radius: 10px 10px 0 0!important;
+}
+
+.el-dialog__body {
+    padding: 20px !important;
+}
+
+.el-dialog__footer {
+    padding: 10px 20px !important;
+}
+
+.el-dialog__headerbtn {
+    top: 10px !important;
+}
+
+.el-dialog__title {
+    font-size: 17px !important;
+    color: #ffffff;
+}
+.el-dialog {
+    border-radius: 10px !important;
+    box-shadow: 0 1px 50px #403e3e;
+}
+.el-dialog__headerbtn .el-dialog__close {
+    color: #ffffff!important;
+}
+.pagination_foot{
+    height: 40px!important;
+    text-align: center;
+}
+.el-pagination{
+    height: 40px!important;
+}
+.el-table{
+    /*box-shadow: 0 1px 30px #e0d8d8;*/
+}
+
+.hj_css .el-upload-list__item {
+    margin-top: 0!important;
+    padding-top: 8px!important;
+    padding-bottom: 8px!important;
+}
+.hj_css-row .el-form-item {
+    margin-bottom: 2px!important;
+}
+.inlineBlock{
+    display: inline-block;
+}
+.firstTable{
+    padding:4px;
+    border:#999999 solid 1px;
+    background-color: #199ed8;
+}
+.approveTable{
+    margin-top:1px;
+    padding:4px;
+    border:#999999 solid 1px;
+    display: inline-block;
+}
+
+.app_head-tabs .el-tabs__nav-scroll{
+ margin: 0 10px;
+}
+
+.tabs_menu{
+    padding: 12px 10px!important;
+    border-radius:0!important;
+}
+
+.app_head-tabs .el-tabs__nav-wrap{
+    margin-right: 43px!important;
+}
+
+.app_head-tabs .el-tabs__header{
+    margin: 0 0 10px!important;
+}
+
+.el-table th {
+    background-color: #199ed8 !important;
+    color: #e8ecf5 !important;
+}
+
+/* 流程图样式 */
+.hortree-wrapper *,
+.hortree-wrapper *:before,
+.hortree-wrapper *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.hortree-wrapper {
+    position: relative;
+    font-family: sans-serif, Verdana, Arial;
+    font-size: 0.9em;
+}
+
+.hortree-branch {
+    /*position: relative;*/
+    /*margin-left: 130px;*/
+    display:inline-block;
+}
+
+.hortree-branch:first-child {
+    margin-left: 0;
+}
+
+.hortree-entry {
+    position: relative;
+    cursor: pointer;
+    /*margin-bottom: 20px;*/
+}
+
+.hortree-label {
+    display: block;
+    /*width: 100px;*/
+    /*padding: 2px 5px;*/
+    padding-left: 5px;
+    padding-right: 5px;
+    /*line-height: 30px;*/
+    text-align: center;
+    border: 2px solid #008000;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    background: #fff;
+    /*word-wrap: break-word;*/
+    word-break: normal;
+}
+
+.hortree-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.hortree-tooltip .hortree-tooltip-text {
+    visibility: hidden;
+    background-color: #484848;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.hortree-tooltip .hortree-tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid transparent;
+    border-top-color: #484848;
+}
+
+.hortree-tooltip:hover .hortree-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.arrow_right{
+    height: 6px;
+    width: 6px;
+    border-right: 2px solid #343c99;
+    border-top: 2px solid #343c99;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border-left: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+}
+
+.process_node_info .el-dialog{
+    margin: 0!important;
+    box-shadow:none!important;
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.process_node_info .el-dialog__body{
+    padding: 0!important;
+}
+
+.process_node_info .el-dialog__header{
+    /*display: none!important;*/
+    border-radius:0!important;
+    padding:1px!important;
+    text-align: center;
+    background:#839298;
+}
+.process_node_info .el-dialog__title{
+    font-size: 10px !important;
+}
+.process_node_info .el-dialog__headerbtn{
+    top:5px!important;
+    right:5px!important;
+}
+.process_node_info tr{
+    background: #fff;
+    height: 25px;
+}
+.process_node_info tr td:first-child{
+    text-align: center;
+    width: 60px;
+}

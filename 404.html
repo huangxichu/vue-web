@@ -1,0 +1,57 @@
+<template>
+    <!-- template start -->
+    <div class="kaicz_404 container">
+        <img src="resources/image/404.gif">
+        <div class="h2">抱歉，您访问的页面出错了</div>
+        <p>您可能输错了网址，或该网页已删除或不存在</p>
+        <a href="javascript:;" class="btn btn-primary btn_blue" @click="refreshWeb()">刷新</a>
+    </div>
+    <!-- template end -->
+</template>
+<script>
+    //!--template start
+    ctOptions = {
+        data: function () {
+            return {}
+        },
+        watch: {},
+        computed: {},
+        methods: {
+            refreshWeb: function () {
+                var _this = this;
+                console.log("currentPath", currentPath);
+                _this.$router.push({
+                    path: currentPath,//路径
+                    query: {//参数
+
+                    }
+                });
+            }
+        },
+        mounted: function () {
+
+        },
+        destroyed: function () {
+
+        },
+        beforeDestroy: function () {
+
+        },
+        updated: function () {
+
+        },
+        beforeUpdate: function () {
+
+        },
+        beforeMount: function () {
+
+        },
+        created: function () {
+
+        },
+        beforeCreate: function () {
+
+        }
+    }
+    //!--template end
+</script>
